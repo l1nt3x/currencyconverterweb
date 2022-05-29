@@ -3,7 +3,7 @@ import requests
 
 # Задаем ключ API
 headers = {
-    "apikey": "DZlatuE00L93T6A738HncpZeFPQOHR35"
+    "apikey": "E0IwSdgNGLHwbokJ2NYQuM7hEfPbf3nn"
 }
 
 
