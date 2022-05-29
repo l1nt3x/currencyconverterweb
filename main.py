@@ -41,6 +41,7 @@ def index():
             currency2_name = currencies[currency2][0]
         rates = get_latest_rates(base=currency1_ABC, symbols=currency2_ABC)['rates']
         converted_value = float(rates[currency2_ABC]) * amount
+        converted_value = round(converted_value, 6)
         converted_text = f'{amount} {currency1_name} = {converted_value} {currency2_name}'
         return render_template('main-en-converted.html', icon_path=icon_path, site_icon_path=site_icon_path,
                                site_url=site_url + 'en', css_path=css_path, amount=amount, currency1=currency1,
@@ -74,6 +75,7 @@ def index_ru():
             currency2_name = currencies[currency2][0]
         rates = get_latest_rates(base=currency1_ABC, symbols=currency2_ABC)['rates']
         converted_value = float(rates[currency2_ABC]) * amount
+        converted_value = round(converted_value, 6)
         converted_text = f'{amount} {currency1_name} = {converted_value} {currency2_name}'
         return render_template('main-ru-converted.html', icon_path=icon_path, site_icon_path=site_icon_path,
                                site_url=site_url + 'ru', css_path=css_path, amount=amount, currency1=currency1,
@@ -107,6 +109,7 @@ def index_ua():
             currency2_name = currencies[currency2][0]
         rates = get_latest_rates(base=currency1_ABC, symbols=currency2_ABC)['rates']
         converted_value = float(rates[currency2_ABC]) * amount
+        converted_value = round(converted_value, 6)
         converted_text = f'{amount} {currency1_name} = {converted_value} {currency2_name}'
         return render_template('main-ua-converted.html', icon_path=icon_path, site_icon_path=site_icon_path,
                                site_url=site_url, css_path=css_path, amount=amount, currency1=currency1,
