@@ -18,7 +18,7 @@ currencies = json.load(fcurrencies)
 @app.route('/en', methods=['POST', 'GET'])
 def index():
     # Получаем пути к ресурсам
-    site_icon_path = url_for('static', filename='img/icon.png')
+    site_icon_path = url_for('static', filename='img/icon-en.png')
     css_path = url_for('static', filename='css/main.css')
     icon_path = url_for('static', filename='img/icon.png')
     # Рендерим страницу
@@ -51,7 +51,7 @@ def index():
 @app.route('/ru', methods=['POST', 'GET'])
 def index_ru():
     # Получаем пути к ресурсам
-    site_icon_path = url_for('static', filename='img/icon.png')
+    site_icon_path = url_for('static', filename='img/icon-ua-ru.png')
     css_path = url_for('static', filename='css/main.css')
     icon_path = url_for('static', filename='img/icon.png')
     # Рендерим страницу
@@ -84,7 +84,7 @@ def index_ru():
 @app.route('/', methods=['POST', 'GET'])
 def index_ua():
     # Получаем пути к ресурсам
-    site_icon_path = url_for('static', filename='img/icon.png')
+    site_icon_path = url_for('static', filename='img/icon-ua-ru.png')
     css_path = url_for('static', filename='css/main.css')
     icon_path = url_for('static', filename='img/icon.png')
     # Рендерим страницу
