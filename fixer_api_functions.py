@@ -1,5 +1,6 @@
 # Импорт необходимых библиотек
 import requests
+from config import headers
 
 # Задаем ключ API
 headers = headers
