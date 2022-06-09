@@ -2,10 +2,7 @@
 import requests
 
 # Задаем ключ API
-headers = {
-    "apikey": "E0IwSdgNGLHwbokJ2NYQuM7hEfPbf3nn"
-}
-
+headers = headers
 
 # Функция получения последних курсов
 def get_latest_rates(base='UAH', symbols='USD,EUR,RUB'):
