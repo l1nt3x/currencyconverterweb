@@ -15,7 +15,7 @@ fcurrencies = open('.info/currencies.json', encoding='UTF-8')
 currencies = json.load(fcurrencies)
 
 # Root
-@app.route('/en', methods=['POST', 'GET'])
+@app.route('/', methods=['POST', 'GET'])
 def index():
     # Получаем пути к ресурсам
     site_icon_path = url_for('static', filename='img/icon-en.png')
@@ -24,7 +24,7 @@ def index():
     # Рендерим страницу
     if request.method == 'GET':
         return render_template('main-en.html', icon_path=icon_path, site_icon_path=site_icon_path,
-                               site_url=site_url + 'en', css_path=css_path)
+                               site_url=site_url, css_path=css_path)
     elif request.method == 'POST':
         amount = float(request.form['amount'])
         currency1 = request.form['currencies1']
@@ -44,7 +44,7 @@ def index():
         converted_value = round(converted_value, 6)
         converted_text = f'{amount} {currency1_name} = {converted_value} {currency2_name}'
         return render_template('main-en-converted.html', icon_path=icon_path, site_icon_path=site_icon_path,
-                               site_url=site_url + 'en', css_path=css_path, amount=amount, currency1=currency1,
+                               site_url=site_url, css_path=css_path, amount=amount, currency1=currency1,
                                currency2=currency2, converted_text=converted_text)
 
 
@@ -83,7 +83,7 @@ def index_ru():
 
 
 # Корінь
-@app.route('/', methods=['POST', 'GET'])
+@app.route('/ua', methods=['POST', 'GET'])
 def index_ua():
     # Получаем пути к ресурсам
     site_icon_path = url_for('static', filename='img/icon-ua-ru.png')
@@ -92,7 +92,7 @@ def index_ua():
     # Рендерим страницу
     if request.method == 'GET':
         return render_template('main-ua.html', icon_path=icon_path, site_icon_path=site_icon_path,
-                               site_url=site_url, css_path=css_path)
+                               site_url=site_url + 'ua', css_path=css_path)
     elif request.method == 'POST':
         amount = float(request.form['amount'])
         currency1 = request.form['currencies1']
@@ -112,7 +112,7 @@ def index_ua():
         converted_value = round(converted_value, 6)
         converted_text = f'{amount} {currency1_name} = {converted_value} {currency2_name}'
         return render_template('main-ua-converted.html', icon_path=icon_path, site_icon_path=site_icon_path,
-                               site_url=site_url, css_path=css_path, amount=amount, currency1=currency1,
+                               site_url=site_url + 'ua', css_path=css_path, amount=amount, currency1=currency1,
                                currency2=currency2, converted_text=converted_text)
 
 
