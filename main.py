@@ -128,4 +128,4 @@ def start_server(state='heroku'):
 
 # Стартуем процесс
 if __name__ == '__main__':
-    start_server()
+    start_server('debug')
